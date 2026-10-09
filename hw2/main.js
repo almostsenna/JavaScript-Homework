@@ -49,16 +49,30 @@
 
 // for (let i = 1; i <= 10; i++) {
 //     let num1 = Number(prompt(`Enter number ${i}:`));
+
 //     if (num1 > 0) {
 //         pos++;
 //     } else if (num1 < 0) {
 //         neg++;
-//     }  
-//     else {
+//     } else {
 //         zero++;
 //     }
+
+//     if (num1 % 2 === 0) {
+//         even++;
+//     } else {
+//         odd++;
+//     }
 // }
-// // Task 6
+
+// alert(`
+// Positive: ${pos}
+// Negative: ${neg}
+// Zero: ${zero}
+// Even: ${even}
+// Odd: ${odd}
+// `);
+// Task 6
 // let again;
 
 // do {
