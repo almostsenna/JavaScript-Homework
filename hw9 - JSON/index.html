@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie search</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <section class="search-section" aria-labelledby="search-heading">
+      <h1 id="search-heading">Search:</h1>
+
+      <form id="search-form" novalidate>
+        <div class="form-row">
+          <label for="movie-title">Title:</label>
+          <input id="movie-title" name="title" type="search" required
+                 aria-describedby="form-error">
+        </div>
+
+        <div class="form-row">
+          <label for="movie-type">Type:</label>
+          <select id="movie-type" name="type">
+            <option value="movie">Movie</option>
+            <option value="series">Series</option>
+            <option value="episode">Episode</option>
+          </select>
+        </div>
+
+        <p id="form-error" class="message error" aria-live="polite" hidden></p>
+        <button type="submit">Search</button>
+      </form>
+    </section>
+
+    <section id="results" aria-labelledby="results-heading" hidden>
+      <h2 id="results-heading">Films:</h2>
+      <p id="search-status" class="message" role="status" hidden></p>
+      <p id="results-summary" class="summary" hidden></p>
+      <ul id="movie-list" class="movie-list"></ul>
+      <nav id="pagination" aria-label="Results pages" hidden></nav>
+    </section>
+
+    <section id="film-info" aria-labelledby="info-heading" hidden>
+      <h2 id="info-heading">Film info:</h2>
+      <p id="details-status" class="message" role="status" hidden></p>
+      <div id="details-content" class="details-content" hidden></div>
+    </section>
+  </main>
+</body>
+</html>

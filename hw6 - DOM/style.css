@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 64px 20px;
+    background: #f3f5f1;
+    color: #24352c;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.container {
+    width: 100%;
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 36px;
+    background: #ffffff;
+    border: 1px solid #e1e7de;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px #24352c0a;
+}
+
+
+h1 {
+    margin: 8px 0;
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    margin: 0 0 28px;
+    color: #637367;
+}
+
+form > label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid #aebbae;
+    border-radius: 10px;
+    color: inherit;
+    font: inherit;
+}
+
+input[aria-invalid="true"] {
+    border-color: #b23232;
+}
+
+button {
+    min-height: 44px;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font: inherit;
+    cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #739c80;
+    outline-offset: 3px;
+}
+
+.add-button {
+    background: #246343;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.add-button:hover {
+    background: #1c5036;
+}
+
+.hint {
+    margin: 7px 0 0;
+    color: #637367;
+    font-size: 13px;
+}
+
+.error {
+    min-height: 21px;
+    margin: 4px 0 20px;
+    color: #b23232;
+    font-size: 14px;
+}
+
+.list-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid #e5ebe2;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.filter-button {
+    padding: 8px 12px;
+    background: #f3f5f1;
+    color: #435b49;
+    font-size: 14px;
+}
+
+.filter-button:hover {
+    background: #e4eddf;
+}
+
+.filter-button.active {
+    border-color: #246343;
+    background: #e4f0e5;
+    color: #1c5036;
+    font-weight: bold;
+}
+
+.counter {
+    margin: 0;
+    color: #536657;
+    font-size: 14px;
+}
+
+.goal-list {
+    display: grid;
+    gap: 10px;
+    margin: 22px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.goal-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 12px 14px;
+    border: 1px solid #e1e7de;
+    border-radius: 12px;
+}
+
+.goal-label {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.goal-checkbox {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    accent-color: #246343;
+    cursor: pointer;
+}
+
+.goal-text {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.completed {
+    background: #f5f8f3;
+}
+
+.completed .goal-text {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.delete-button {
+    flex-shrink: 0;
+    padding: 8px 10px;
+    background: #fff0ed;
+    color: #a23025;
+    font-size: 14px;
+}
+
+.delete-button:hover {
+    background: #ffe1db;
+}
+
+.empty-message {
+    margin: 0;
+    padding: 32px 16px;
+    border: 1px dashed #cbd6c6;
+    border-radius: 12px;
+    color: #637367;
+    text-align: center;
+}
+
+@media (max-width: 540px) {
+    body {
+        padding: 24px 12px;
+    }
+
+    .container {
+        padding: 24px 18px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .goal-item {
+        gap: 8px;
+        padding: 10px;
+    }
+}
+
+/* Зберігає приховування елементів навіть із display: flex. */
+[hidden] {
+    display: none !important;
+}

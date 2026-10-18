@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація на курс</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <h1>Реєстрація на курс</h1>
+        <p class="hint">Поля зі * обов’язкові.</p>
+
+        <form id="registration-form" novalidate>
+            <div class="field">
+                <label for="full-name">Ім’я *</label>
+                <input class="text-input" id="full-name" name="fullName" type="text" autocomplete="name" minlength="2" maxlength="50" required aria-describedby="name-hint name-error" aria-invalid="false">
+                <p id="name-hint" class="hint">Від 2 до 50 символів.</p>
+                <p id="name-error" class="error" role="alert"></p>
+            </div>
+
+            <div class="field">
+                <label for="email">E-mail *</label>
+                <input class="text-input" id="email" name="email" type="email" autocomplete="email" maxlength="100" required aria-describedby="email-error" aria-invalid="false">
+                <p id="email-error" class="error" role="alert"></p>
+            </div>
+
+            <div class="field wide">
+                <label for="password">Пароль *</label>
+                <div class="password-row">
+                    <input class="text-input" id="password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="30" required aria-describedby="password-hint password-error" aria-invalid="false">
+                    <button id="password-button" type="button" aria-controls="password" aria-label="Показувати пароль" aria-pressed="false">Показати пароль</button>
+                </div>
+                <p id="password-hint" class="hint">Від 8 до 30 символів.</p>
+                <p id="password-error" class="error" role="alert"></p>
+            </div>
+
+            <div class="field wide">
+                <label for="about">Про себе</label>
+                <textarea class="text-input" id="about" name="about" rows="4" maxlength="300" aria-describedby="about-counter about-error" aria-invalid="false"></textarea>
+                <p id="about-counter" class="hint"><span id="character-count">0</span> / 300 символів</p>
+                <p id="about-error" class="error" role="alert"></p>
+            </div>
+
+            <div class="field">
+                <label for="city">Місто *</label>
+                <select class="text-input" id="city" name="city" required aria-describedby="city-error" aria-invalid="false">
+                    <option value="">Оберіть місто</option>
+                    <option value="Вінниця">Вінниця</option>
+                    <option value="Київ">Київ</option>
+                    <option value="Львів">Львів</option>
+                    <option value="Одеса">Одеса</option>
+                    <option value="Дніпро">Дніпро</option>
+                    <option value="Інше місто">Інше місто</option>
+                </select>
+                <p id="city-error" class="error" role="alert"></p>
+            </div>
+
+            <fieldset id="format-group" class="field" aria-describedby="format-error">
+                <legend>Формат навчання *</legend>
+                <label class="choice"><input id="format-online" type="radio" name="format" value="online" required aria-invalid="false" aria-describedby="format-error"> Онлайн</label>
+                <label class="choice"><input type="radio" name="format" value="offline" required aria-describedby="format-error"> Офлайн</label>
+                <p id="format-error" class="error" role="alert"></p>
+            </fieldset>
+
+            <fieldset class="field wide">
+                <legend>Інтереси</legend>
+                <div class="interests">
+                    <label class="choice"><input type="checkbox" name="interests" value="JavaScript"> JavaScript</label>
+                    <label class="choice"><input type="checkbox" name="interests" value="HTML/CSS"> HTML/CSS</label>
+                    <label class="choice"><input type="checkbox" name="interests" value="C#"> C#</label>
+                </div>
+            </fieldset>
+
+            <div class="field wide">
+                <label for="photo">Фото профілю</label>
+                <input id="photo" name="photo" type="file" accept="image/*" aria-describedby="photo-hint photo-error" aria-invalid="false">
+                <p id="photo-hint" class="hint">Зображення розміром не більше 2 МБ.</p>
+                <p id="photo-error" class="error" role="alert"></p>
+            </div>
+
+            <div class="field wide">
+                <label class="choice"><input id="terms" name="terms" type="checkbox" required aria-describedby="terms-error" aria-invalid="false"> Погоджуюся з умовами навчання *</label>
+                <p id="terms-error" class="error" role="alert"></p>
+            </div>
+
+            <div class="buttons wide">
+                <button class="submit-button" type="submit">Зареєструватися</button>
+                <button type="reset">Очистити форму</button>
+            </div>
+
+            <p id="success-message" class="success wide" role="status" hidden></p>
+        </form>
+    </main>
+</body>
+</html>

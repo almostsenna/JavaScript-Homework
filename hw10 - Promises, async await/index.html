@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callbacks та Promises</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Callbacks та Promises</h1>
+
+    <section aria-labelledby="process-heading">
+      <h2 id="process-heading">Завдання 1. Обробка масиву</h2>
+      <p>Функція processArray передає кожен елемент масиву в callback.</p>
+
+      <div class="examples">
+        <form id="double-form" novalidate>
+          <h3>Подвоєння чисел</h3>
+          <label for="double-input">Масив чисел у форматі JSON</label>
+          <textarea id="double-input" rows="2" aria-describedby="double-error">[1, 2, 3, 4, 5]</textarea>
+          <p id="double-error" class="error" role="alert" hidden></p>
+          <button type="submit">Подвоїти</button>
+          <pre class="result" role="status" aria-label="Результат подвоєння">Результат з’явиться тут.</pre>
+        </form>
+
+        <form id="reverse-form" novalidate>
+          <h3>Розворот елементів</h3>
+          <label for="reverse-input">Масив у форматі JSON</label>
+          <textarea id="reverse-input" rows="2" aria-describedby="reverse-error">["hello", "world"]</textarea>
+          <p id="reverse-error" class="error" role="alert" hidden></p>
+          <button type="submit">Розвернути</button>
+          <pre class="result" role="status" aria-label="Результат розвороту">Результат з’явиться тут.</pre>
+        </form>
+      </div>
+    </section>
+
+    <section aria-labelledby="filter-heading">
+      <h2 id="filter-heading">Завдання 2. Фільтрація масиву</h2>
+      <p>Функція filterArray залишає елементи, для яких callback повертає true.</p>
+
+      <div class="examples">
+        <form id="even-form" novalidate>
+          <h3>Парні числа</h3>
+          <label for="even-input">Масив чисел у форматі JSON</label>
+          <textarea id="even-input" rows="2" aria-describedby="even-error">[1, 2, 3, 4, 5]</textarea>
+          <p id="even-error" class="error" role="alert" hidden></p>
+          <button type="submit">Знайти парні</button>
+          <pre class="result" role="status" aria-label="Парні числа">Результат з’явиться тут.</pre>
+        </form>
+
+        <form id="short-form" novalidate>
+          <h3>Слова до 4 символів включно</h3>
+          <label for="short-input">Масив рядків у форматі JSON</label>
+          <textarea id="short-input" rows="2" aria-describedby="short-error">["cat", "elephant", "dog", "bird"]</textarea>
+          <p id="short-error" class="error" role="alert" hidden></p>
+          <button type="submit">Знайти короткі слова</button>
+          <pre class="result" role="status" aria-label="Короткі слова">Результат з’явиться тут.</pre>
+        </form>
+      </div>
+    </section>
+
+    <section aria-labelledby="chores-heading">
+      <h2 id="chores-heading">Завдання 3. Ланцюжок Promise</h2>
+      <p>Справи виконуються послідовно: 2 + 4 + 7 = 13 секунд.</p>
+
+      <ol id="chores-list">
+        <li>
+          <span>Миття посуду <small>2 с</small></span>
+          <span class="task-state">Очікує</span>
+        </li>
+        <li>
+          <span>Прибирання кімнати <small>4 с</small></span>
+          <span class="task-state">Очікує</span>
+        </li>
+        <li>
+          <span>Приготування вечері <small>7 с</small></span>
+          <span class="task-state">Очікує</span>
+        </li>
+      </ol>
+
+      <button id="start-chores" type="button">Запустити послідовно</button>
+      <p id="chores-time">Минуло: 0 с</p>
+      <pre id="chores-log" class="result" role="log" aria-label="Перебіг виконання справ" aria-live="polite">Натисніть кнопку, щоб почати.</pre>
+    </section>
+
+    <section aria-labelledby="sort-heading">
+      <h2 id="sort-heading">Завдання 4. Сортування через Promise</h2>
+      <p>Числа сортуються за зростанням через 2 секунди. Для порожнього масиву Promise відхиляється.</p>
+
+      <form id="sort-form" novalidate>
+        <label for="sort-input">Масив чисел у форматі JSON</label>
+        <textarea id="sort-input" rows="2" aria-describedby="sort-error">[5, 1, 10, 3, 2]</textarea>
+        <p id="sort-error" class="error" role="alert" hidden></p>
+        <button type="submit">Відсортувати</button>
+        <pre class="result" role="status" aria-label="Результат сортування">Результат з’явиться тут.</pre>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

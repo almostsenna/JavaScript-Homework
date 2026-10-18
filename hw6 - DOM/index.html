@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій список цілей</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Мій список цілей</h1>
+            <p class="subtitle">Додавай цілі та відзначай свій прогрес.</p>
+        </header>
+
+        <form id="goal-form" novalidate>
+            <label for="goal-input">Нова ціль</label>
+            <div class="form-row">
+                <input
+                    id="goal-input"
+                    name="goal"
+                    type="text"
+                    placeholder="Наприклад, вивчити DOM"
+                    autocomplete="off"
+                    aria-describedby="goal-hint goal-error"
+                    aria-invalid="false"
+                    required
+                >
+                <button class="add-button" type="submit">Додати</button>
+            </div>
+            <p id="goal-hint" class="hint">Від 3 до 100 символів.</p>
+            <p id="goal-error" class="error" role="alert"></p>
+        </form>
+
+        <div class="list-toolbar">
+            <div class="filters" role="group" aria-label="Фільтри цілей">
+                <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">Усі</button>
+                <button class="filter-button" type="button" data-filter="active" aria-pressed="false">Активні</button>
+                <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">Виконані</button>
+            </div>
+            <p id="counter" class="counter" role="status">Усього: 0. Виконано: 0</p>
+        </div>
+
+        <ul id="goal-list" class="goal-list" aria-label="Список цілей"></ul>
+        <p id="empty-message" class="empty-message">Поки що цілей немає</p>
+    </main>
+</body>
+</html>

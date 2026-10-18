@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color palette</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <section class="form-section" aria-labelledby="form-heading">
+            <h1 id="form-heading">Create new color</h1>
+
+            <form id="color-form" novalidate>
+                <label for="color-name">Color:</label>
+                <input id="color-name" name="colorName" type="text" autocomplete="off" required aria-describedby="name-error" aria-invalid="false">
+                <p id="name-error" class="error" role="alert"></p>
+
+                <label for="color-type">Type:</label>
+                <select id="color-type" name="colorType">
+                    <option value="RGB">RGB</option>
+                    <option value="RGBA">RGBA</option>
+                    <option value="HEX">HEX</option>
+                </select>
+
+                <label for="color-code">Code:</label>
+                <input id="color-code" name="colorCode" type="text" autocomplete="off" required aria-describedby="code-error" aria-invalid="false">
+                <p id="code-error" class="error" role="alert"></p>
+
+                <button type="submit">Save</button>
+                <p id="cookie-error" class="error" role="alert"></p>
+            </form>
+        </section>
+
+        <section class="palette-section" aria-labelledby="palette-heading">
+            <h2 id="palette-heading">All colors</h2>
+            <div id="palette" class="palette"></div>
+            <p id="empty-message" hidden>Поки що кольорів немає.</p>
+        </section>
+    </main>
+</body>
+</html>
