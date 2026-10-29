@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Взаємодія із сервером</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <p class="subtitle">JavaScript · HTTP-запити</p>
+      <h1>Взаємодія із сервером</h1>
+      <p>Поради, породи собак, цитати та інформація про країни.</p>
+    </header>
+
+    <div class="tasks">
+      <section class="card" aria-labelledby="advice-title">
+        <span class="badge">1 · XMLHttpRequest</span>
+        <h2 id="advice-title">Пошук порад</h2>
+
+        <form id="advice-form" novalidate>
+          <fieldset id="advice-fields">
+            <label for="advice-input">Слово для пошуку</label>
+
+            <input
+              id="advice-input"
+              type="text"
+              value="life"
+              placeholder="Наприклад: life, love, work"
+            >
+
+            <button id="advice-button" type="submit">
+              Знайти поради
+            </button>
+          </fieldset>
+        </form>
+
+        <p id="advice-status" class="status" role="status"></p>
+        <ul id="advice-list" class="list advice-list"></ul>
+      </section>
+
+      <section class="card" aria-labelledby="dog-title">
+        <span class="badge">2 · XMLHttpRequest</span>
+        <h2 id="dog-title">Породи собак</h2>
+
+        <p class="description">
+          У дужках показані різновиди породи, якщо вони є.
+        </p>
+
+        <fieldset id="dog-fields">
+          <button id="dog-button" type="button">
+            Завантажити породи
+          </button>
+        </fieldset>
+
+        <p id="dog-status" class="status" role="status"></p>
+        <ul id="breed-list" class="list breed-list"></ul>
+      </section>
+
+      <section class="card" aria-labelledby="quote-title">
+        <span class="badge">3 · fetch</span>
+        <h2 id="quote-title">Випадкова цитата</h2>
+
+        <form id="quote-form" novalidate>
+          <fieldset id="quote-fields">
+            <label for="quote-key">API-ключ API Ninjas</label>
+
+            <input
+              id="quote-key"
+              type="password"
+              placeholder="Введи свій API-ключ"
+              autocomplete="off"
+            >
+
+            <button id="quote-button" type="submit">
+              Отримати цитату
+            </button>
+          </fieldset>
+        </form>
+
+        <p id="quote-status" class="status" role="status"></p>
+        <div id="quote-container"></div>
+      </section>
+
+      <section class="card" aria-labelledby="country-title">
+        <span class="badge">4 · fetch</span>
+        <h2 id="country-title">Інформація про країну</h2>
+
+        <form id="country-form" novalidate>
+          <fieldset id="country-fields">
+            <label for="country-input">Назва країни</label>
+
+            <input
+              id="country-input"
+              type="text"
+              value="Ukraine"
+              placeholder="Наприклад: Ukraine, Canada, Germany"
+            >
+
+            <label for="country-key">
+              API-ключ REST Countries для v5
+            </label>
+
+            <input
+              id="country-key"
+              type="password"
+              placeholder="Необов’язково для запиту до v3.1"
+              autocomplete="off"
+              aria-describedby="country-hint"
+            >
+
+            <p id="country-hint" class="hint">
+              Без ключа використовується v3.1 з умови завдання.
+              З ключем використовується v5.
+            </p>
+
+            <button id="country-button" type="submit">
+              Знайти країну
+            </button>
+          </fieldset>
+        </form>
+
+        <p id="country-status" class="status" role="status"></p>
+        <div id="country-info" class="country-info"></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

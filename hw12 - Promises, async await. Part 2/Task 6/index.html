@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Асинхронне сортування</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <p class="task">Promise та async/await</p>
+
+    <h1>Сортування масиву</h1>
+
+    <p class="description">
+      Введи числа через кому. Сортування триватиме 2 секунди.
+    </p>
+
+    <form id="sort-form" novalidate>
+      <fieldset id="form-fields" aria-label="Масив для сортування">
+        <label for="array-input">Масив чисел</label>
+
+        <input
+          id="array-input"
+          type="text"
+          value="5, 1, 9, 3, 7"
+          placeholder="Наприклад: 10, -2, 5, 0"
+          aria-describedby="array-hint"
+        >
+
+        <p id="array-hint" class="hint">
+          Для десяткових чисел використовуй крапку: 2.5, 1.3, 4.
+        </p>
+
+        <button id="sort-button" type="submit">
+          Відсортувати
+        </button>
+      </fieldset>
+    </form>
+
+    <p id="result" class="result" role="status" aria-live="polite">
+      Тут буде результат
+    </p>
+
+    <p class="hint">
+      Очисти поле, щоб перевірити помилку порожнього масиву.
+    </p>
+  </main>
+</body>
+</html>

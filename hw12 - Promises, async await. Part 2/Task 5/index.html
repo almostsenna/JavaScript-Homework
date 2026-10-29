@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Асинхронне множення</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <p class="task">Завдання 5</p>
+
+    <h1>Множення з Promise</h1>
+
+    <p class="description">
+      Введи два числа. Обчислення триватиме 2 секунди.
+    </p>
+
+    <form id="multiply-form" novalidate>
+      <fieldset id="form-fields" aria-label="Числа для множення">
+        <div class="numbers">
+          <label for="number-a">
+            Перше число
+            <input
+              id="number-a"
+              type="text"
+              inputmode="decimal"
+              value="6"
+            >
+          </label>
+
+          <span class="operator" aria-hidden="true">×</span>
+
+          <label for="number-b">
+            Друге число
+            <input
+              id="number-b"
+              type="text"
+              inputmode="decimal"
+              value="9"
+            >
+          </label>
+        </div>
+
+        <button id="calculate-button" type="submit">
+          Помножити
+        </button>
+      </fieldset>
+    </form>
+
+    <p id="result" class="result" role="status" aria-live="polite">
+      Тут буде результат
+    </p>
+
+    <p class="hint">
+      Для перевірки помилки введи текст замість числа.
+    </p>
+  </main>
+</body>
+</html>

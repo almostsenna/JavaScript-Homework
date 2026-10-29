@@ -1,0 +1,177 @@
+/* 1. Базові стилі */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  background: #f6f5f0;
+  color: #242c23;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+/* 2. Картка */
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  padding: 35px;
+  border: 1px solid #dddfd5;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 10px 30px #242c2308;
+}
+
+.task {
+  margin: 0 0 12px;
+  color: #6754b6;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+h1 {
+  margin: 0 0 14px;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.description {
+  margin: 0 0 25px;
+  color: #73796f;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 3. Форма */
+
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: end;
+  gap: 14px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  height: 48px;
+  padding: 10px 12px;
+  border: 1px solid #dddfd5;
+  border-radius: 8px;
+  background: #fcfcfa;
+  color: #242c23;
+}
+
+.operator {
+  display: grid;
+  place-items: center;
+  height: 48px;
+  color: #6754b6;
+  font-size: 26px;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  border: 1px solid #c7e077;
+  border-radius: 8px;
+  background: #d6ef88;
+  color: #242c23;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #cbe777;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #c7bde9;
+  outline-offset: 3px;
+}
+
+fieldset:disabled {
+  opacity: 0.6;
+}
+
+button:disabled {
+  cursor: wait;
+}
+
+/* 4. Результат */
+
+.result {
+  margin: 22px 0 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #f3f4ef;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.result--loading {
+  background: #f0edf9;
+  color: #6754b6;
+}
+
+.result--success {
+  background: #edf5e7;
+  color: #3e622f;
+}
+
+.result--error {
+  background: #fcf0ef;
+  color: #ad3636;
+}
+
+.hint {
+  margin: 16px 0 0;
+  color: #73796f;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* 5. Мобільні екрани */
+
+@media (max-width: 420px) {
+  .card {
+    padding: 24px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .numbers {
+    gap: 10px;
+  }
+}

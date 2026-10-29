@@ -1,0 +1,286 @@
+/* 1. Базові стилі */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f6f5f0;
+  color: #242c23;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+.page {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 40px 25px;
+}
+
+/* 2. Заголовок */
+
+.header {
+  margin-bottom: 30px;
+}
+
+.subtitle {
+  margin: 0 0 10px;
+  color: #6754b6;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 36px;
+  line-height: 1.2;
+}
+
+.header > p:last-child {
+  margin: 0;
+  color: #73796f;
+  line-height: 1.6;
+}
+
+/* 3. Сітка та картки */
+
+.tasks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 22px;
+}
+
+.card {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid #dddfd5;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 6px 20px #242c2305;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #f0edf9;
+  color: #6754b6;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+h2 {
+  margin: 16px 0 20px;
+  font-size: 24px;
+}
+
+.description {
+  margin: 0 0 18px;
+  color: #73796f;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 4. Форми */
+
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 12px;
+  border: 1px solid #dddfd5;
+  border-radius: 8px;
+  background: #fcfcfa;
+  color: #242c23;
+}
+
+input + label {
+  margin-top: 16px;
+}
+
+input::placeholder {
+  color: #92988b;
+}
+
+button {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 16px;
+  padding: 11px 15px;
+  border: 1px solid #c7e077;
+  border-radius: 8px;
+  background: #d6ef88;
+  color: #242c23;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #cbe777;
+}
+
+#dog-button {
+  margin-top: 0;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #c7bde9;
+  outline-offset: 3px;
+}
+
+fieldset:disabled {
+  opacity: 0.65;
+}
+
+fieldset:disabled button {
+  cursor: wait;
+}
+
+/* 5. Повідомлення */
+
+.status {
+  margin: 16px 0 0;
+  color: #6754b6;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.status:empty {
+  display: none;
+}
+
+.status--error {
+  color: #ad3636;
+}
+
+.hint {
+  margin: 10px 0 0;
+  color: #73796f;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* 6. Списки */
+
+.list {
+  max-height: 320px;
+  margin: 18px 0 0;
+  padding-left: 22px;
+  overflow-y: auto;
+}
+
+.list:empty {
+  display: none;
+}
+
+.list li {
+  padding: 8px 5px;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.list li + li {
+  border-top: 1px solid #eeeee8;
+}
+
+.breed-list {
+  text-transform: capitalize;
+}
+
+/* 7. Цитата та країни */
+
+blockquote {
+  margin: 20px 0 12px;
+  padding: 16px;
+  border-left: 4px solid #6754b6;
+  border-radius: 0 8px 8px 0;
+  background: #f0edf9;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.quote-author {
+  margin: 0;
+  color: #73796f;
+  font-size: 14px;
+  text-align: right;
+}
+
+.country-info {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.country-info:empty {
+  display: none;
+}
+
+.country-card {
+  padding: 18px;
+  border: 1px solid #e4e7dc;
+  border-radius: 10px;
+  background: #fcfcfa;
+}
+
+.country-card h3 {
+  margin: 0 0 15px;
+  font-size: 21px;
+}
+
+.country-card p {
+  margin: 9px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.flag {
+  display: block;
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border: 1px solid #dddfd5;
+}
+
+/* 8. Мобільні екрани */
+
+@media (max-width: 760px) {
+  .page {
+    padding: 28px 18px;
+  }
+
+  .tasks {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 23px;
+  }
+
+  h1 {
+    font-size: 29px;
+  }
+}
